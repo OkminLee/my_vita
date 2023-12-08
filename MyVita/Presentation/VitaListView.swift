@@ -15,6 +15,19 @@ struct VitaListView: View {
                     
                 }
             }
+            let path = Bundle.main.url(forResource: "qna", withExtension: "json")!
+            let decoder = JSONDecoder()
+            let data = try! Data(contentsOf: path)
+            let list = try! decoder.decode([QnA].self, from: data)
+            ForEach(list, id: \.self) { item in
+                VStack {
+                    Text(item.question)
+                    ForEach(item.answers, id: \.self) { answer in
+                        Text(answer)
+                    }
+                }
+                
+            }
             VStack {
                 Spacer()
                 HStack {

@@ -11,7 +11,7 @@ import SwiftUI
 struct MyVitaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            VitaListView()
         }
     }
 }
