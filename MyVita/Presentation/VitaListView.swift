@@ -39,7 +39,7 @@ struct VitaListView: View {
         }
         .background(Color.adsSurface)
         .sheet(isPresented: $showQnAList, content: {
-            QnAListView()
+            QnAListView(showQnAList: $showQnAList)
         })
     }
 }
