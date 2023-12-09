@@ -22,6 +22,7 @@ struct FetchQnAUseCaseImpl: FetchQnAUseCase {
             return try decoder.decode([QnA].self, from: data)
         } catch {
             // TODO: - error handling
+            print(error.localizedDescription)
             return []
         }
     }

@@ -4,4 +4,39 @@
     "question": "최근에 숙취로 힘든 적이 있나요?",
     "answers": ["아니요", "가끔", "술 마시는 날 마다"],
   },
+  {
+    "category": "heart",
+    "question": "최근에 가슴 통증이나 불편함을 느낀 적이 있나요?",
+    "answers": ["아니요", "가끔", "자주"]
+  },
+  {
+    "category": "lungs",
+    "question": "호흡에 어려움을 느낀 적이 있나요?",
+    "answers": ["아니요", "가끔", "자주"]
+  },
+  {
+    "category": "mental",
+    "question": "최근에 스트레스를 많이 받은 것 같나요?",
+    "answers": ["아니요", "가끔", "자주"]
+  },
+  {
+    "category": "digestive",
+    "question": "소화 불량이나 위 통증을 경험한 적이 있나요?",
+    "answers": ["아니요", "가끔", "자주"]
+  },
+  {
+    "category": "sleep",
+    "question": "최근에 잠을 충분히 잤다고 느낀 적이 있나요?",
+    "answers": ["예", "가끔", "아니요"]
+  },
+  {
+    "category": "vision",
+    "question": "시력이 갑자기 변화한 적이 있나요?",
+    "answers": ["아니요", "가끔", "자주"]
+  },
+  {
+    "category": "general",
+    "question": "최근에 전반적인 건강 상태가 좋다고 느낀 적이 있나요?",
+    "answers": ["예", "가끔", "아니요"]
+  }
 ]
