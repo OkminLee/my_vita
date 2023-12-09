@@ -23,26 +23,32 @@ struct QnAListView: View {
             ScrollView {
                 LazyVStack {
                     ForEach(fetchQnAUseCase.execute(), id: \.self) { item in
-                        VStack(spacing: 16) {
-                            HStack {
-                                Text(item.category.text)
-                                    .font(.bodySmall)
-                                    .foregroundColor(.adsMediumEmphasis)
-                                Spacer()
+                        NavigationLink {
+                            QnAView(qna: item)
+                        } label: {
+                            VStack(spacing: 16) {
+                                HStack {
+                                    Text(item.category.text)
+                                        .font(.bodySmall)
+                                        .foregroundColor(.adsMediumEmphasis)
+                                    Spacer()
+                                }
+                                
+                                HStack {
+                                    Text(item.question)
+                                        .font(.titleMedium)
+                                        .foregroundColor(.adsHighEmphasis)
+                                        .multilineTextAlignment(.leading)
+                                        .padding(.trailing, 56)
+                                    Spacer()
+                                }
                             }
-                            
-                            HStack {
-                                Text(item.question)
-                                    .font(.titleMedium)
-                                    .foregroundColor(.adsHighEmphasis)
-                                Spacer()
-                            }
+                            .padding()
+                            .background(Color.adsSurface1)
+                            .cornerRadius(8)
+                            .padding(.horizontal, 24)
+                            .padding(.vertical, 4)
                         }
-                        .padding()
-                        .background(Color.adsSurface1)
-                        .cornerRadius(8)
-                        .padding(.horizontal, 24)
-                        .padding(.vertical, 4)
                     }
                 }
             }
