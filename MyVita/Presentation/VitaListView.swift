@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct VitaListView: View {
+    
+    @State private var showQnAList: Bool = false
+    
     var body: some View {
         ZStack {
             LazyVStack {
@@ -15,25 +18,12 @@ struct VitaListView: View {
                     
                 }
             }
-            let path = Bundle.main.url(forResource: "qna", withExtension: "json")!
-            let decoder = JSONDecoder()
-            let data = try! Data(contentsOf: path)
-            let list = try! decoder.decode([QnA].self, from: data)
-            ForEach(list, id: \.self) { item in
-                VStack {
-                    Text(item.question)
-                    ForEach(item.answers, id: \.self) { answer in
-                        Text(answer)
-                    }
-                }
-                
-            }
             VStack {
                 Spacer()
                 HStack {
                     Spacer()
                     Button {
-                        
+                        showQnAList = true
                     } label: {
                         Text("+")
                             .font(.displaySmall)
@@ -46,7 +36,11 @@ struct VitaListView: View {
                 .padding(.trailing, 24)
                 .padding(.bottom, 16)
             }
-        }.background(Color.adsSurface)
+        }
+        .background(Color.adsSurface)
+        .sheet(isPresented: $showQnAList, content: {
+            QnAListView()
+        })
     }
 }
 

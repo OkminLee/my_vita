@@ -9,6 +9,12 @@ import Foundation
 
 enum QnACategory: String, Decodable {
     case liver
+    
+    var text: String {
+        switch self {
+        case .liver: "간 건강"
+        }
+    }
 }
 
 struct QnA: Decodable, Hashable {
