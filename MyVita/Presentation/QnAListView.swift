@@ -19,21 +19,8 @@ struct QnAListView: View {
     }
     
     var body: some View {
-        VStack {
+        NavigationView {
             ScrollView {
-                
-                HStack {
-                    Button(action: {
-                        showQnAList = false
-                    }, label: {
-                        Text("취소")
-                            .font(.buttonMedium)
-                            .foregroundColor(.adsHighEmphasis)
-                    })
-                    Spacer()
-                }
-                .padding(.horizontal, 24)
-                .padding(.bottom, 24)
                 LazyVStack {
                     ForEach(fetchQnAUseCase.execute(), id: \.self) { item in
                         VStack(spacing: 16) {
@@ -59,6 +46,19 @@ struct QnAListView: View {
                     }
                 }
             }
+            .navigationTitle("추천 항목")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showQnAList = false
+                    }, label: {
+                        Text("취소")
+                            .font(.buttonMedium)
+                            .foregroundColor(.adsHighEmphasis)
+                    })
+                }
+            })
         }
         .background(Color.adsSurface)
     }
