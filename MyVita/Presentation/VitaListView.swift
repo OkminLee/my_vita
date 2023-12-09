@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct VitaListView: View {
+    
+    @State private var showQnAList: Bool = false
+    
     var body: some View {
         ZStack {
             LazyVStack {
@@ -20,7 +23,7 @@ struct VitaListView: View {
                 HStack {
                     Spacer()
                     Button {
-                        
+                        showQnAList = true
                     } label: {
                         Text("+")
                             .font(.displaySmall)
@@ -33,7 +36,11 @@ struct VitaListView: View {
                 .padding(.trailing, 24)
                 .padding(.bottom, 16)
             }
-        }.background(Color.adsSurface)
+        }
+        .background(Color.adsSurface)
+        .sheet(isPresented: $showQnAList, content: {
+            QnAListView()
+        })
     }
 }
 
