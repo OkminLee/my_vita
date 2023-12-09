@@ -9,37 +9,67 @@ import SwiftUI
 
 struct QnAListView: View {
     
+    @Binding private var showQnAList: Bool
     private let fetchQnAUseCase: FetchQnAUseCase = FetchQnAUseCaseImpl()
     
+    init(
+        showQnAList: Binding<Bool>
+    ) {
+        self._showQnAList = showQnAList
+    }
+    
     var body: some View {
-        LazyVStack {
+        NavigationView {
             ScrollView {
-                ForEach(fetchQnAUseCase.execute(), id: \.self) { item in
-                    VStack(spacing: 16) {
-                        HStack {
-                            Text(item.category.text)
-                                .font(.bodySmall)
-                                .foregroundColor(.adsHighEmphasis)
-                            Spacer()
-                        }
-                        
-                        HStack {
-                            Text(item.question)
-                                .font(.titleMedium)
-                                .foregroundColor(.adsHighEmphasis)
-                            Spacer()
+                LazyVStack {
+                    ForEach(fetchQnAUseCase.execute(), id: \.self) { item in
+                        NavigationLink {
+                            QnAView(qna: item)
+                        } label: {
+                            VStack(spacing: 16) {
+                                HStack {
+                                    Text(item.category.text)
+                                        .font(.bodySmall)
+                                        .foregroundColor(.adsMediumEmphasis)
+                                    Spacer()
+                                }
+                                
+                                HStack {
+                                    Text(item.question)
+                                        .font(.titleMedium)
+                                        .foregroundColor(.adsHighEmphasis)
+                                        .multilineTextAlignment(.leading)
+                                        .padding(.trailing, 56)
+                                    Spacer()
+                                }
+                            }
+                            .padding()
+                            .background(Color.adsSurface1)
+                            .cornerRadius(8)
+                            .padding(.horizontal, 24)
+                            .padding(.vertical, 4)
                         }
                     }
-                    .padding()
-                    .background(Color.adsSurface1)
-                    .cornerRadius(8)
-                    .padding(.horizontal, 24)
                 }
             }
-        }.background(Color.adsSurface)
+            .navigationTitle("추천 항목")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showQnAList = false
+                    }, label: {
+                        Text("취소")
+                            .font(.buttonMedium)
+                            .foregroundColor(.adsHighEmphasis)
+                    })
+                }
+            })
+        }
+        .background(Color.adsSurface)
     }
 }
 
 #Preview {
-    QnAListView()
+    QnAListView(showQnAList: .constant(true))
 }

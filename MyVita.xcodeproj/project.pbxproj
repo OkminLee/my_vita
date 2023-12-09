@@ -19,6 +19,7 @@
 		BA71E46D2B23DF5B00008E23 /* QnA.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71E46C2B23DF5B00008E23 /* QnA.swift */; };
 		BA71E4702B23F68600008E23 /* FetchQnAUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71E46F2B23F68600008E23 /* FetchQnAUseCase.swift */; };
 		BA71E4722B23F70000008E23 /* QnAListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71E4712B23F70000008E23 /* QnAListView.swift */; };
+		BA71E4742B24114A00008E23 /* QnAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA71E4732B24114A00008E23 /* QnAView.swift */; };
 		BA8377EE2B1189350058400E /* MyVitaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8377ED2B1189350058400E /* MyVitaApp.swift */; };
 		BA8377F02B1189350058400E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8377EF2B1189350058400E /* ContentView.swift */; };
 		BA8377F22B1189350058400E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA8377F12B1189350058400E /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		BA71E46C2B23DF5B00008E23 /* QnA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnA.swift; sourceTree = "<group>"; };
 		BA71E46F2B23F68600008E23 /* FetchQnAUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchQnAUseCase.swift; sourceTree = "<group>"; };
 		BA71E4712B23F70000008E23 /* QnAListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAListView.swift; sourceTree = "<group>"; };
+		BA71E4732B24114A00008E23 /* QnAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAView.swift; sourceTree = "<group>"; };
 		BA8377EA2B1189350058400E /* MyVita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8377ED2B1189350058400E /* MyVitaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVitaApp.swift; sourceTree = "<group>"; };
 		BA8377EF2B1189350058400E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				BA71E4632B23D9F500008E23 /* VitaListView.swift */,
 				BA71E4712B23F70000008E23 /* QnAListView.swift */,
+				BA71E4732B24114A00008E23 /* QnAView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				BA71E4672B23DB0E00008E23 /* View+ALDesign.swift in Sources */,
 				BA71E4722B23F70000008E23 /* QnAListView.swift in Sources */,
 				BA71E4602B23D9D300008E23 /* Typography.swift in Sources */,
+				BA71E4742B24114A00008E23 /* QnAView.swift in Sources */,
 				BA71E4582B23D9D300008E23 /* ALColor.swift in Sources */,
 				BA71E4572B23D9D300008E23 /* ALColorPalette.swift in Sources */,
 				BA8377F02B1189350058400E /* ContentView.swift in Sources */,
